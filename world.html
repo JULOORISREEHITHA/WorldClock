@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background: url('https://t3.ftcdn.net/jpg/07/63/96/30/360_F_763963007_eYIt7NnytfV5m3XMcPYn07rVlTRcGjxU.jpg');
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 100px;
+        }
+        .main{
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 130px;
+            flex-wrap: wrap;
+            /* border: solid red; */
+           
+        }
+        .timebox{
+            border: 10px solid goldenrod;
+            background-color: rgba(255,255,255,0.3);
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+
+        }
+        .container h2{
+            padding: 50px;
+            font-size: 50px;
+            color:solid rgb(7, 57, 68);
+            text-decoration-style:wavy;
+            text-decoration-color: rgb(3, 58, 73);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>World clock</h2>
+    <div class="main">
+    <div class="timebox">
+        <h1>Paris</h1>
+        <p id="parisTime"></p>
+    </div>
+
+   
+    <div class="timebox">
+        <h1>New_York</h1>
+        <p id="New_yorkTime"></p>
+    </div>
+
+    <div class="timebox">
+        <h1>London</h1>
+        <p id="londonTime"></p>
+    </div>
+
+    <div class="timebox">
+        <h1>India</h1>
+        <p id="indianTime"></p>
+    </div>
+   </div>
+</div>
+    <script>
+        var indianTime=function(){
+            document.getElementById('indianTime').innerHTML=new Date().toLocaleString("en-us",{timeZone:'Asia/Kolkata',timeStyle:"medium",hourCycle:"h12"})
+        }
+        setInterval(indianTime,1000)
+        var parisTime=function(){
+            document.getElementById('parisTime').innerHTML=new Date().toLocaleString("en-us",{timeZone:'Europe/Paris',timeStyle:"medium",hourCycle:"h12"})
+        }
+        setInterval(parisTime,1000)
+        var londonTime=function(){
+            document.getElementById('londonTime').innerHTML=new Date().toLocaleString("en-us",{timeZone:'Europe/London',timeStyle:"medium",hourCycle:"h12"})
+        }
+        setInterval(londonTime,1000)
+        var New_yorkTime=function(){
+            document.getElementById('New_yorkTime').innerHTML=new Date().toLocaleString("en-us",{timeZone:'America/New_York',timeStyle:"medium",hourCycle:"h12"})
+        }
+        setInterval(New_yorkTime,1000)
+    </script>
+</body>
+</html>
